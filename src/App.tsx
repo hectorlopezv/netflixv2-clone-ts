@@ -2,6 +2,8 @@
 import React from 'react';
 import Home from './containers/Home';
 import FooterContainer from './containers/Footer';
+import Faqs from './containers/Faq';
+
 
 
 const App = () => {
@@ -9,6 +11,7 @@ const App = () => {
     <>
       <Home/>
       <FooterContainer/>
+      <Faqs/>
     </>
   );
 }

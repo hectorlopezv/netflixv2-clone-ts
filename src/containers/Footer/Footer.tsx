@@ -48,8 +48,11 @@ const FooterContainer: React.FC<FooterContainerProps> = () => {
                     <Footer_Link  href="#">Cookie Preferences</Footer_Link>
                     <Footer_Link  href="#">Legal Notices</Footer_Link>
                 </Footer_Col>
-
+                <Footer_Break />
             </Footer_Row>
+
+            <Footer_Text>Netflix Colombia</Footer_Text>
+
         </Footer>
     );
 }
