@@ -1,5 +1,5 @@
 import React, {useState, useContext, createContext} from 'react'
-import {Container, Title, Frame, Item, Header, Body} from './styles/Accordion';
+import {Container, Title, Frame, Item, Header, Body, Inner} from './styles/Accordion';
 
 
 const ToogleContext = createContext<{ToogleShow:any, setToogleShow:any}>({ToogleShow: false, setToogleShow: () => {}});
@@ -10,7 +10,9 @@ export interface AccordionProps {
 const Accordion: React.FC<AccordionProps> = ({children, ...props}) => {
     return ( 
         <Container {...props}>
-            {children}
+            <Inner>
+              {children}  
+            </Inner> 
         </Container>
      );
 }
@@ -57,12 +59,17 @@ export const Accordion_Frame: React.FC<Accordion_ItemProps> = ({children, ...pro
 export interface Accordion_HeaderProps {
     
 }
- 
+ /*<pre>{JSON.stringify(ToogleShow, null, 2)} </pre>*/
 export const Accordion_Header: React.FC<Accordion_HeaderProps> = ({children, ...props}) => {
-    const {setToogleShow} = useContext<{ToogleShow:any, setToogleShow: any}>(ToogleContext);
+    const {ToogleShow, setToogleShow} = useContext<{ToogleShow:any, setToogleShow: any}>(ToogleContext);
     
     return (  
-        <Header onClick={() => setToogleShow((latest: boolean) => !latest)} {...props}>{children}</Header>
+        <Header onClick={() => setToogleShow((latest: boolean) => !latest)} {...props}>
+            {children}
+            {ToogleShow ? (<img src="images/icons/close-slim.png" alt="Close" />):
+                (<img src="images/icons/add.png" alt="Close" />)
+            }
+        </Header>
     );
 }
 
