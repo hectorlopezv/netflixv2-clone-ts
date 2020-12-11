@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import './index.css'
-
+import GlobalStyles from './globalStyles';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -31,7 +31,8 @@ render(
   <Provider store={store}>
 
     <React.StrictMode>
-      <App />
+      <GlobalStyles />
+        <App />
     </React.StrictMode>
   </Provider>
   ,
