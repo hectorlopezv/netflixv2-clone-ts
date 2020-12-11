@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react'
 import faqs from '../../fixtures/faqs.json';
 import Accordion, 
