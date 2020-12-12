@@ -9,7 +9,7 @@ import Accordion,
     Accordion_Header, 
     Accordion_Body 
 } from '../../components/Accordion';
-
+import Form from '../Form';
 
 export interface FaqsProps {
 
@@ -26,7 +26,7 @@ const Faqs: React.FC<FaqsProps> = () => {
                 </Accordion_Item>
             })}
 
-
+            <Form />
         </Accordion>
     );
 }
