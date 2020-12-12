@@ -10,7 +10,7 @@ export interface HomeProps {
 const Home: React.FC<HomeProps> = () => {
     return (
 
-        <Jumbo_Container>
+      <Jumbo_Container>
         {dataJumbo.map((j: any) => (
           <JumboTron key={j.id} direction={j.direction}>
             <JumboTron_Pane>
