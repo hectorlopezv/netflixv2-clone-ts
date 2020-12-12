@@ -14,7 +14,7 @@ export interface HeaderProps {
 }
  
 const Header: React.FC<HeaderProps> = ({bg =  true, children, ...props}) => {
-    return (bg? <Background {...props}>{children}</Background> : children);
+    return (bg? <Background {...props}  >{children}</Background> : children);
 }
  
 export default Header;
