@@ -1,4 +1,7 @@
 import React from 'react';
+import FooterContainer from '../containers/Footer';
+import HeaderContainer from '../containers/Header/HeaderContainer';
+import SignUpForm from '../containers/SignUpForm';
 
 export interface SignUpProps {
     
@@ -6,8 +9,12 @@ export interface SignUpProps {
  
 const SignUp: React.FC<SignUpProps> = () => {
     return (  
-
-        <p>Hello im from SIGNUP</p>
+        <> 
+            <HeaderContainer>
+                <SignUpForm/> 
+            </HeaderContainer>
+            <FooterContainer /> 
+        </>
     );
 }
  

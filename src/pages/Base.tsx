@@ -9,7 +9,7 @@ export interface BaseProps {
 const Base: React.FC<BaseProps> = ({children, ...props}) => {
     return (  
         <>
-            <HeaderContainer >Hello From the Sing in</HeaderContainer>
+            <HeaderContainer>Hello From the Sing in</HeaderContainer>
                 {children}
             <FooterContainer />
         </>

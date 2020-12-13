@@ -23,7 +23,9 @@ const Form: React.FC<FormProps> = ({ children, ...props }) => {
 export default Form;
 
 export interface BaseProps {
-    
+    onSubmit: (event: any) => void;
+    method: string;
+
 }
  
 export const Form_Base: React.FC<BaseProps> = ({children, ...props}) => {
@@ -66,7 +68,7 @@ export const Form_SmallText: React.FC<Form_SmallTextProps> = ({children, ...prop
 }
 
 export interface Form_LinkProps {
-    
+    to: string;
 }
  
 export const Form_Link: React.FC<Form_LinkProps> = ({children, ...props}) => {
@@ -74,7 +76,11 @@ export const Form_Link: React.FC<Form_LinkProps> = ({children, ...props}) => {
 }
  
 export interface Form_InputProps {
-    
+    placeholder: string;
+    value: string;
+    onChange: ({ target: any }: { target: any; }) => void;
+    type?: string;
+    autoComplete?: string;
 }
  
 export const Form_Input: React.FC<Form_InputProps> = ({children, ...props}) => {
@@ -82,6 +88,8 @@ export const Form_Input: React.FC<Form_InputProps> = ({children, ...props}) => {
 }
  
 export interface Form_SubmitProps {
+    disabled: any;
+    type: any;
     
 }
  
