@@ -21,7 +21,6 @@ const HomePage: React.FC<HomePageProps> = () => {
                     <Form />
                 </Feature>
 
-                
             </HeaderContainer>
             
             <Home/>
