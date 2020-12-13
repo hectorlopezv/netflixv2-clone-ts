@@ -8,11 +8,15 @@ import { createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import 'normalize.css';
 import GlobalStyles from './globalStyles';
+//import {firebase} from './lib/firebase.prod';
+//import {seedDatabase} from './lib/seed';
+import AppReducer from './store/reducers/App';
+
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const rootReducer = combineReducers({
-
+  App: AppReducer
 });
 
 
@@ -21,9 +25,10 @@ const composeEnchancers = composeWithDevTools({
   traceLimit: 25
 });
 
-const store = createStore(() => { }, composeEnchancers(
+const store = createStore(rootReducer, composeEnchancers(
   applyMiddleware(sagaMiddleware),
 ));
+
 //run saga listeners
 //sagaMiddleware.run();
 render(

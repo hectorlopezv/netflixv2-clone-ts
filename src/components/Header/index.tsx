@@ -50,12 +50,9 @@ export interface Header_ButtonProps {
  
 export const Header_ButtonLink: React.FC<Header_ButtonProps> = ({to='/', children, ...props}) => {
     return (  
-        <Link to={to} style={{ textDecoration: 'none' }} >
-            <HeaderLink {...props}>
+            <HeaderLink {...props} to={to} style={{ textDecoration: 'none' }}>
                 {children}
-            </HeaderLink>
-        </Link>
-        
+            </HeaderLink> 
     );
 }
  

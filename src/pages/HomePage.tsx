@@ -17,7 +17,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <HeaderContainer>
                 <Feature>
                     <Feature_Title>Unlimited films, Tv Programmes and more.</Feature_Title>
-                    <Feature_SubTitle>Watch anywhere. Canel at any time</Feature_SubTitle>
+                    <Feature_SubTitle>Watch anywhere. Cancel at any time</Feature_SubTitle>
                     <Form />
                 </Feature>
 

@@ -12,7 +12,7 @@ const HeaderContainer: React.FC<HeaderContainerProps> = ({children}) => {
         <Header bg = {true}>
             <Header_Frame>
                 <Header_Logo to={ROUTES.HOME} alt="Netflix" src={logo} />
-                <Header_ButtonLink to={ROUTES.HOME}> Sign In</Header_ButtonLink>
+                <Header_ButtonLink to={ROUTES.SIGN_IN}> Sign In</Header_ButtonLink>
             </Header_Frame>
             {children}
         </Header>
