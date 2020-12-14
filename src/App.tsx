@@ -6,33 +6,58 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import * as ROUTES from './Routes';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  BrowserRouter as Router, Switch
 } from "react-router-dom";
 
+import IsUserRedirect, {ProtectedRoute} from './utils/redirection/routes';
+import useAuthListener from './hooks/user_auth_listener';
 
 const App = () => {
+
+  const [user] = useAuthListener();
+  console.log('entro aqui')
+  console.log(user);
+
   return (  
 
     <Router>
+      <Switch>
 
-        <Route exact path="/browse">
-          <Browse />
-        </Route>
+        <IsUserRedirect 
+          user={user} 
+          loggedInPath={ROUTES.BROWSE}  
+          path={ROUTES.SIGN_IN}
+        
+        >
+            <SignIn />
+        </IsUserRedirect>
 
-        <Route exact path="/signup">
-          <SignUp />
-        </Route>
 
-        <Route exact path="/signin">
-          <SignIn />
-        </Route>
+        <IsUserRedirect 
+          user={user} 
+          loggedInPath={ROUTES.BROWSE}  
+          path={ROUTES.SIGN_UP}
+      
+        >
+            <SignUp />
+        </IsUserRedirect>
 
-        <Route exact path={ROUTES.HOME}>
-          <HomePage />
-        </Route>
+
+        <ProtectedRoute user={user} path={ROUTES.BROWSE} exact>
+            <Browse />
+        </ProtectedRoute>
+
+
+        <IsUserRedirect 
+          user={user} 
+          loggedInPath={ROUTES.BROWSE}  
+          path={ROUTES.HOME}
+          exact
+        >
+            <HomePage />
+        </IsUserRedirect>
+
+      </Switch>
 
     </Router>
   
