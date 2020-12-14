@@ -10,8 +10,8 @@ export interface LoadingProps {
 //loading spinner
 const Loading: React.FC<LoadingProps> = ({src, ...props}) => {
     return (  
-        <Spinner>
-            
+        <Spinner {...props}>
+            <LockBody />
             <Picture src={`/images/users/${src}.png`}/>
         </Spinner>
     );
