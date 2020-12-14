@@ -23,9 +23,12 @@ const SelectProfileContainer: React.FC<SelectProfileContainerProps> = ({user, se
         </Header>
 
         <Profiles>
-            <Profiles_Title>Who Wathcing</Profiles_Title>
+            <Profiles_Title>Who is Watching</Profiles_Title>
             <Profiles_List>
-                <Profiles_User>
+                <Profiles_User onClick={() => setProfile({
+                        displayName: user.displayName,
+                        photoURL: user.photoURL
+                    })}>
                     <Profiles_Picture src={user?.photoURL} />
                     <Profiles_Name>{user?.displayName}</Profiles_Name>
                 </Profiles_User>

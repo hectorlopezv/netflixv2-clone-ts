@@ -14,7 +14,6 @@ const useAuthListener = () => {
         //fire listener and execute when state changes
         const listener = firebase.auth().onAuthStateChanged((authUser: any) => {
             if( authUser){
-                console.log('el', authUser.ProviderData);
                 localStorage.setItem('authUser', JSON.stringify(authUser.providerData));
                 setuser(authUser.providerData);
             }else{

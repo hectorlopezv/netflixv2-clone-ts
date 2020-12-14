@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Title, Picture, Name, User, List} from './styles/Profilex';
+import {Container, Title, Picture, Name, Item, List} from './styles/Profilex';
 
 
 
@@ -33,8 +33,9 @@ export interface Profiles_PictureProps {
  
 
 export const Profiles_Picture: React.FC<Profiles_PictureProps> = ({src, ...props}) => {
+    //reconsiliation
     return ( 
-        <Picture {...props} src={src ? `/images/users/${src}.png` :`/images/misc/loading`} />
+        <Picture {...props} src={src ? `/images/users/${src}.png` :`/images/misc/loading.gif`} />
      );
 }
  
@@ -52,13 +53,13 @@ export const Profiles_Name: React.FC<Profiles_NameProps> = ({children, ...props}
  
 
 export interface Profiles_UserProps {
-    
+    onClick: any;
 }
  
 
 export const Profiles_User: React.FC<Profiles_UserProps> = ({children, ...props}) => {
     return ( 
-        <User {...props}>{children}</User>
+        <Item {...props}>{children}</Item>
      );
 }
 
