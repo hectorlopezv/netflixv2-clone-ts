@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import SelectProfileContainer from '../Profiles/Profile';
 import {useSelector} from 'react-redux';
 import Loading_, {Loading_ReleaseBody} from '../../components/Loading';
+import FooterContainer from '../../containers/Footer';
+
 import Card, 
 {Card_Text,
     Card_Feature,
@@ -12,7 +14,7 @@ import Card,
 import Header, {Header_Text, Header_Feature, Header_FeatureCallOut,
     Header_Frame, Header_Logo, Header_TextLink, Header_Group
     ,Header_Profile,Header_Picture, Header_Dropdown, Header_Search,
-    Header_PlayButton, Header_GroupPlay
+    Header_PlayButton
 } from '../../components/Header';
 
 import {PlayIcon} from '../../components/Header/styles/Header';
@@ -139,6 +141,7 @@ const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
                     </Card> 
                 ))}
             </Card_Group>
+            <FooterContainer />
 
         </>
         ): (

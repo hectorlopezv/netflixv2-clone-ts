@@ -101,6 +101,7 @@ background-color: ${({ rating }) => (Number(rating) >= 15 ? '#f44336' : '#2f9600
 border-radius: 15px;
 width: 28px;
 line-height: 28px;
+
 text-align: center;
 color: white;
 font-weight: bold;
@@ -153,7 +154,7 @@ display: flex;
   &:last-of-type {
     margin-right: 56px;
     @media (max-width: 1000px) {
-      margin-right: 30px;
+      margin-right: 15px;
     }
   }
     `;
@@ -179,6 +180,7 @@ interface FeatureProps {
 }
 export const Feature = styled.div<FeatureProps>`
     display: flex;
+    position: relative;
     flex-direction: row;
     background: url(${({src}) => src});
     background-size: contain;
