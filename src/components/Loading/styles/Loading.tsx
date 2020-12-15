@@ -7,7 +7,7 @@ export const Spinner = styled.div`
   height: 100%;
   background-color: black;
   z-index: 999;
-  :after {
+  &:after {
     content: '';
     position: absolute;
     top: 50%;

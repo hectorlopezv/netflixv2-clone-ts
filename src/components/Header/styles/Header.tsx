@@ -212,6 +212,7 @@ export const SearchIcon = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: 0;
+    margin-right: 6px;
 
     img {
         filter: brightness(0) invert(1);
@@ -228,10 +229,11 @@ export const SearchInput = styled.input<SearchProps>`
     background-color: #444444;
     color: white;
     border: 1px solid white;
-    transition : width 0.5s;
+    transition : width 0.4s;
     height: 30px;
     font-size: 14px;
     margin-left: ${({active}) => active === true ? '10px' : '0'};
+    margin-right: ${({active}) => active === true ? '10px' : '0'};
     padding: ${({active}) => active === true ? '10px' : '0'};
     opacity: ${({active}) => active === true ? '1' : '0'};
     width: ${({active}) => active === true ? '200px' : '0'};

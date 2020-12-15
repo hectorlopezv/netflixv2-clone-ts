@@ -32,7 +32,7 @@ export const Name = styled.p`
     color: #808080;
     text-overflow: ellipsis;
     flont-size: 16px;
-
+    text-align: center;
     &:hover {
         font-weight: bold;
         color: #e5e5e5;
