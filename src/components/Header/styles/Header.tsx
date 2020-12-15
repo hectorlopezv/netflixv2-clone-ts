@@ -115,6 +115,7 @@ export const Link = styled.p<LinkProps>`
     color: white;
     text-decoration: none;
     margin-right: 30px;
+    cursor: pointer;
     font-weight: ${({active}) => (active === 'true' ? '700' : 'normal')}
     &:hover {
         font-weight: bold;

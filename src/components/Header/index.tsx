@@ -119,6 +119,7 @@ export const Header_FeatureCallOut: React.FC<Header_FeatureCallOutProps> = ({chi
  
 export interface Header_TextLinkProps {
     onClick?: any;
+    active?: any;
 }
  
 export const Header_TextLink: React.FC<Header_TextLinkProps> = ({children, ...props}) => {

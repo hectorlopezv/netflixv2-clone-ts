@@ -3,6 +3,12 @@ import React, {useState, useEffect} from 'react';
 import SelectProfileContainer from '../Profiles/Profile';
 import {useSelector} from 'react-redux';
 import Loading_, {Loading_ReleaseBody} from '../../components/Loading';
+import Card, 
+{Card_Text,
+    Card_Feature,
+    Card_Group, Card_Title, Card_Entities, Card_Item, Card_Image, Card_Meta, Card_SubTitle
+} from '../../components/Card';
+
 import Header, {Header_Text, Header_Feature, Header_FeatureCallOut,
     Header_Frame, Header_Logo, Header_TextLink, Header_Group
     ,Header_Profile,Header_Picture, Header_Dropdown, Header_Search,
@@ -20,6 +26,9 @@ export interface BrowseContainerProps {
 }
  
 const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
+    //SHOW series or films
+    const [category, setcategory] = useState('series');
+    const [slideRows, setslideRows] = useState([]);
     //handle rows authetication profiles, authentication
     const [Loading, setLoading] = useState(true);
     const [profile, setprofile] = useState<any>({});
@@ -39,6 +48,12 @@ const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
         }, 3000);
     }, [displayName]);//execute when depency changes
 
+    useEffect(() => {
+        //active slides (films or series)
+        //fetch series or films
+        setslideRows(slides[category]);
+    }, [category, slides]);
+
     //if there is a profile clicked 
     return profile.displayName ? (
         <>
@@ -48,8 +63,10 @@ const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
             <Header_Frame>
                 <Header_Group>
                     <Header_Logo to={ROUTES.HOME} alt="Netflix" src={logo} />
-                    <Header_TextLink>Series</Header_TextLink>
-                    <Header_TextLink>Films</Header_TextLink> 
+                    <Header_TextLink active={category === 'series'? 'true' : 'false'}
+                        onClick={() => setcategory('series')}>Series</Header_TextLink>
+                    <Header_TextLink active={category === 'films'? 'true' : 'false'} 
+                        onClick={() => setcategory('films')}>Films</Header_TextLink> 
                 </Header_Group>
 
                 <Header_Group>
@@ -90,9 +107,39 @@ const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
                         <Header_PlayButton><PlayIcon /> Play</Header_PlayButton>
                     </Header_Group>
        
-                    
                 </Header_Feature>
             </Header>
+            <Card_Group>
+                {slideRows.map((slideItem: any) => (
+                    <Card key={`${category}-${slideItem.title.toLowerCase()}`}>{/* carc container*/}
+                        <Card_Title>{slideItem.title}</Card_Title>
+                        <Card_Entities>{/*Card Carrousel*/}
+                            {/* Card Item*/}
+                            {slideItem.data.map((item: any) => ( 
+                                <Card_Item key={item.docId} item={item}>
+                                    <Card_Image src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}/>
+                                    <Card_Meta>
+                                        <Card_SubTitle>{item.title}</Card_SubTitle>
+                                        <Card_Text>{item.description}</Card_Text>
+                                    </Card_Meta>
+                                </Card_Item>
+                            ))}
+                        </Card_Entities>
+                        <Card_Feature category={category}>
+                                <p>Hello</p>
+                        </Card_Feature>
+
+{/*<Card_Feature category={category}>
+                            <Player>
+                                <Player_Button />
+                                <Player_Video src={"/videos/bunny.mp4"}/>
+                            </Player>
+                        </Card_Feature>
+                            */}
+                    </Card> 
+                ))}
+            </Card_Group>
+
         </>
         ): (
             <SelectProfileContainer user={user} setProfile={setprofile}/>
