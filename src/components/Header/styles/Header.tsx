@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import {Link as ReactRouterLink} from 'react-router-dom';
+import { FaPlay } from "react-icons/fa";
 
 export const Container = styled.div`
     display: flex;
@@ -237,4 +238,35 @@ export const SearchInput = styled.input<SearchProps>`
     padding: ${({active}) => active === true ? '10px' : '0'};
     opacity: ${({active}) => active === true ? '1' : '0'};
     width: ${({active}) => active === true ? '200px' : '0'};
+`;
+
+export const PlayButton = styled.button`
+    box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, .35);
+    background-color: white;
+    color: black;
+    border-width: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    max-width: 180px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color .25s;
+    &: hover {
+        background-color: rgba(255,255,255,0.75); 
+    }
+
+`;
+
+export const GroupPlayButton = styled(Group)`
+    justify-content: space-between;
+`;
+export const PlayIcon = styled(FaPlay)`
+    color: black;
+    font-size: 30px;
 `;

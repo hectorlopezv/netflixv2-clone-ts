@@ -5,9 +5,15 @@ import {useSelector} from 'react-redux';
 import Loading_, {Loading_ReleaseBody} from '../../components/Loading';
 import Header, {Header_Text, Header_Feature, Header_FeatureCallOut,
     Header_Frame, Header_Logo, Header_TextLink, Header_Group
-    ,Header_Profile,Header_Picture, Header_Dropdown, Header_Search
+    ,Header_Profile,Header_Picture, Header_Dropdown, Header_Search,
+    Header_PlayButton, Header_GroupPlay
 } from '../../components/Header';
+
+import {PlayIcon} from '../../components/Header/styles/Header';
+
 import logo from '../Header/logo.svg'
+
+
 import * as ROUTES from '../../Routes';
 export interface BrowseContainerProps {
     slides: any;
@@ -79,6 +85,12 @@ const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
                         City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a
                         futile attempt to feel like he's part of the world around him.
                     </Header_Text>
+                   
+                    <Header_Group>
+                        <Header_PlayButton><PlayIcon /> Play</Header_PlayButton>
+                    </Header_Group>
+       
+                    
                 </Header_Feature>
             </Header>
         </>

@@ -9,10 +9,12 @@ import {Container,
     Text,
     Profile,
     Dropdown,
+    GroupPlayButton,
     Picture,
     FeatureCallOut,
     Group,
     Search,
+    PlayButton,
     SearchIcon,
     SearchInput,
     Link as Link_,
@@ -48,15 +50,18 @@ export const Header_Frame: React.FC<Header_FrameProps> = ({children, ...props}) 
 }
 
 
-export interface Group {
+export interface Group_ {
     
 }
 
-export const Header_Group: React.FC<Group> = ({children, ...props}) => {
+export const Header_Group: React.FC<Group_> = ({children, ...props}) => {
     return ( 
         <Group {...props}>{children}</Group>
      );
 }
+
+
+ 
 
 
 export interface Header_LogoProps {
@@ -168,5 +173,21 @@ export const Header_Search: React.FC<Header_SearchProps> = ({searchTerm, setsear
                 onChange={(event: any) => setsearchTerm(event.target.value)}/>
         </Search>
     );
+}
+ 
+export interface Header_PlayButtonProps {
+    
+}
+ 
+export const Header_PlayButton: React.FC<Header_PlayButtonProps> = ({children, ...props}) => {
+    return (<PlayButton {...props}>{children}</PlayButton>  );
+}
+ 
+export interface Header_GroupPlayProps {
+    
+}
+ 
+export const Header_GroupPlay: React.FC<Header_GroupPlayProps> = ({children, ...props}) => {
+    return ( <GroupPlayButton {...props}>{children}</GroupPlayButton> );
 }
  
