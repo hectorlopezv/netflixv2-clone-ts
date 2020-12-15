@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Redirect ,    
-    RouteProps} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 //handle redirection if login! custom hook
 //AUTHENTICACTION RECOMMENDED REACT ROUTER DOOM
 //Login --> signin --> HOMEPAGE

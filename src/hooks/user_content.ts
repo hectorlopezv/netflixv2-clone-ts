@@ -21,7 +21,7 @@ const useContent = (target: string) => {
             setcontent(allContent);
         })
         .catch((error: any) => {
-            console.log(error.message);
+            
         })
     }, [firebase, target]);
     return { [target]: content};

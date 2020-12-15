@@ -15,8 +15,6 @@ import useAuthListener from './hooks/user_auth_listener';
 const App = () => {
 
   const [user] = useAuthListener();
-  console.log('entro aqui')
-  console.log(user);
 
   return (  
 

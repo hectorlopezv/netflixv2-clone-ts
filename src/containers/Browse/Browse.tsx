@@ -4,6 +4,8 @@ import SelectProfileContainer from '../Profiles/Profile';
 import {useSelector} from 'react-redux';
 import Loading_, {Loading_ReleaseBody} from '../../components/Loading';
 import FooterContainer from '../../containers/Footer';
+//live search library!
+import Fuse from 'fuse.js';
 
 import Card, 
 {Card_Text,
@@ -58,9 +60,24 @@ const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
     useEffect(() => {
         //active slides (films or series)
         //fetch series or films
-        setslideRows(slides[category]);
+        setslideRows(slides[category]);//activate either fill or series arrays
     }, [category, slides]);
 
+    useEffect(() => {
+        //search on arrays the keys that match!
+        const fuse = new Fuse(slideRows, {
+            keys: ['data.description', 'data.title', 'data.genre']
+        })
+        const results = fuse.search(searchTerm).map(({item}) => item);
+
+        //if slides container more...
+        if(slideRows.length > 0 && searchTerm.length > 3 && results.length > 0){
+            setslideRows(results);
+        }
+        else {
+            setslideRows(slides[category]);
+        }
+    }, [searchTerm]);//execute each time effect changes!
     //if there is a profile clicked 
     return profile.displayName ? (
         <>
