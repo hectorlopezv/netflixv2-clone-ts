@@ -134,9 +134,11 @@ export const Card_Feature: React.FC<Card_FeatureProps> = ({category, children, .
             <Content>
                 <Feature_Title>{itemFeature.title}</Feature_Title>
                 <Feature_Text>{itemFeature.description}</Feature_Text>
+                
                 <Feature_Close onClick={() => setshowFeature(false)}>
                     <img src={"/images/icons/close.png"} alt="Close"/>
                 </Feature_Close>
+                {children}
             </Content>
 
             <Group margin="30px 0" flexDireciton="row" alignItems="center">

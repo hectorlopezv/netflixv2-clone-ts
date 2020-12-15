@@ -11,6 +11,11 @@ import Card,
     Card_Group, Card_Title, Card_Entities, Card_Item, Card_Image, Card_Meta, Card_SubTitle
 } from '../../components/Card';
 
+import Player, 
+{
+    Player_Button, Player_Video
+} from '../../components/Player';
+
 import Header, {Header_Text, Header_Feature, Header_FeatureCallOut,
     Header_Frame, Header_Logo, Header_TextLink, Header_Group
     ,Header_Profile,Header_Picture, Header_Dropdown, Header_Search,
@@ -128,16 +133,12 @@ const BrowseContainer: React.FC<BrowseContainerProps> = ({slides}) => {
                             ))}
                         </Card_Entities>
                         <Card_Feature category={category}>
-                                <p>Hello</p>
-                        </Card_Feature>
-
-{/*<Card_Feature category={category}>
                             <Player>
                                 <Player_Button />
                                 <Player_Video src={"/videos/bunny.mp4"}/>
                             </Player>
                         </Card_Feature>
-                            */}
+
                     </Card> 
                 ))}
             </Card_Group>
