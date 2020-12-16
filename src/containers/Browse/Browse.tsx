@@ -27,8 +27,6 @@ import Header, {Header_Text, Header_Feature, Header_FeatureCallOut,
 import {PlayIcon} from '../../components/Header/styles/Header';
 
 import logo from '../Header/logo.svg'
-
-
 import * as ROUTES from '../../Routes';
 export interface BrowseContainerProps {
     slides: any;
