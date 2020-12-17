@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component it renders <Profiles /> Component with populated 1`] = `
+<div
+  class="Profilex__Container-sc-7rq9xm-0 kQeQMr"
+>
+  <h1
+    class="Profilex__Title-sc-7rq9xm-1 gfhjgh"
+  >
+    Who is Watching
+  </h1>
+  <ul
+    class="Profilex__List-sc-7rq9xm-4 iVSQRF"
+  >
+    <li
+      class="Profilex__Item-sc-7rq9xm-5 ciqsgI"
+    >
+      <img
+        class="Profilex__Picture-sc-7rq9xm-2 jWDsAp"
+        data-testid="profile-picture"
+        src="/images/users//images/karl.png.png"
+      />
+      <p
+        class="Profilex__Name-sc-7rq9xm-3 duiyaP"
+      >
+        Karl Hadwen
+      </p>
+    </li>
+  </ul>
+</div>
+`;

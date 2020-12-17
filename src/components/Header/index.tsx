@@ -34,7 +34,7 @@ export interface HeaderProps {
 }
  
 const Header: React.FC<HeaderProps> = ({bg =  true, children, ...props}) => {
-    return (bg? <Background {...props}  >{children}</Background> : children);
+    return (bg? <Background {...props}  data-testid="header-bg">{children}</Background> : children);
 }
  
 export default Header;
@@ -165,10 +165,10 @@ export const Header_Search: React.FC<Header_SearchProps> = ({searchTerm, setsear
 
     return (
         <Search {...props}>
-            <SearchIcon onClick={() => setsearchActive((prevState) => !prevState)}>
+            <SearchIcon data-testid={"seach-click"} onClick={() => setsearchActive((prevState) => !prevState)}>
                 <img src="/images/icons/search.png" alt="Search" />
             </SearchIcon>
-            <SearchInput value={searchTerm} 
+            <SearchInput value={searchTerm} data-testid={"seach-input"} 
                 placeholder="Search films and series"
                 active={searchActive}
                 onChange={(event: any) => setsearchTerm(event.target.value)}/>

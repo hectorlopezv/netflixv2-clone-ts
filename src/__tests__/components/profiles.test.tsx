@@ -6,21 +6,21 @@ import Profiles, {Profiles_Title, Profiles_List,Profiles_User, Profiles_Picture,
 
 describe('Profile component', () => {
     it('it renders <Profiles /> Component with populated', () => {
-        const {container, getByText} = render(       
+        const {container, getByText, getByTestId} = render(       
             <Profiles>
                 <Profiles_Title>Who is Watching</Profiles_Title>
                 <Profiles_List>
-                    <Profiles_User onClick={() => setProfile({
-                            displayName: user.displayName,
-                            photoURL: user.photoURL
-                        })}>
-                        <Profiles_Picture src={user?.photoURL} />
-                        <Profiles_Name>{user?.displayName}</Profiles_Name>
+                    <Profiles_User onClick={() => {}}>
+                        <Profiles_Picture src={"/images/karl.png"} data-testid="profile-picture" />
+                        <Profiles_Name>Karl Hadwen</Profiles_Name>
                     </Profiles_User>
                 </Profiles_List>
             </Profiles>
         );
         //assertions
-        
+        expect(getByText('Who is Watching')).toBeTruthy();
+        expect(getByTestId('profile-picture')).toBeTruthy();
+        expect(getByText("Karl Hadwen")).toBeTruthy();
+        expect(container.firstChild).toMatchSnapshot();
     });
 });
