@@ -1,6 +1,6 @@
 interface props {
-    series: any;
-    films: any;
+    series?: any;
+    films?: any;
 }
 function selectionFilter({ series, films }: props ) {
     return {

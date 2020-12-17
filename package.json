@@ -47,6 +47,7 @@
   "jest": {
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.tsx",
+      "<rootDir>/src/utils/*.ts",
       "!<rootDir>/src/app.tsx",
       "!<rootDir>/src/helpers/routes.js",
       "!<rootDir>/src/lib/firebase.ts",

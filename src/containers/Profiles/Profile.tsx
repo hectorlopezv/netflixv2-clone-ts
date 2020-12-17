@@ -25,7 +25,7 @@ const SelectProfileContainer: React.FC<SelectProfileContainerProps> = ({user, se
         <Profiles>
             <Profiles_Title>Who is Watching</Profiles_Title>
             <Profiles_List>
-                <Profiles_User onClick={() => setProfile({
+                <Profiles_User data-testid="user-profile" onClick={() => setProfile({
                         displayName: user.displayName,
                         photoURL: user.photoURL
                     })}>
