@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OptFrom /> its render component <OptForm /> with populated data 1`] = `
+<div
+  class="OptFrom__Container-sc-1yp3xvy-0 lowLVr"
+>
+  <input
+    class="OptFrom__Input-sc-1yp3xvy-1 bxuxtm"
+    placeholder="Email Address"
+  />
+  <button
+    class="OptFrom__Button-sc-1yp3xvy-2 dSZZKp"
+  >
+    Try it now
+    <img
+      alt="Try Now"
+      src="/images/icons/chevron-right.png"
+    />
+  </button>
+  <div
+    class="OptFrom__Break-sc-1yp3xvy-4 hwsWyN"
+  />
+  <p
+    class="OptFrom__Text-sc-1yp3xvy-3 yDUth"
+  >
+    Ready to watch? enter your email to create or restart your membership
+  </p>
+</div>
+`;

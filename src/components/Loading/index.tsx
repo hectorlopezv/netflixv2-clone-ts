@@ -12,7 +12,7 @@ const Loading: React.FC<LoadingProps> = ({src, ...props}) => {
     return (  
         <Spinner {...props}>
             <LockBody />
-            <Picture src={`/images/users/${src}.png`}/>
+            <Picture src={`/images/users/${src}.png`} data-testid="loading-picture"/>
         </Spinner>
     );
 }

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading componen Renders Loading Compoennt <Loading /> 1`] = `
+<div
+  class="Loading__Spinner-sc-182vy79-0 cFKdut"
+  data-testid="loading"
+>
+  <img
+    class="Loading__Picture-sc-182vy79-1 kLuCXK"
+    data-testid="loading-picture"
+    src="/images/users//images/karl.png.png"
+  />
+</div>
+`;
+
+exports[`Loading componen Renders Loading Compoennt <Loading /> 2`] = `
+<div
+  class="Loading__Spinner-sc-182vy79-0 cFKdut"
+  data-testid="loading"
+>
+  <img
+    class="Loading__Picture-sc-182vy79-1 kLuCXK"
+    data-testid="loading-picture"
+    src="/images/users//images/karl.png.png"
+  />
+</div>
+`;
+
+exports[`Loading componen Renders the Loading <Loading_ReleaseBody /> 1`] = `null`;

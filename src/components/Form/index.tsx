@@ -23,8 +23,8 @@ const Form: React.FC<FormProps> = ({ children, ...props }) => {
 export default Form;
 
 export interface BaseProps {
-    onSubmit: (event: any) => void;
-    method: string;
+    onSubmit?: (event: any) => void;
+    method?: string;
 
 }
  
@@ -77,7 +77,7 @@ export const Form_Link: React.FC<Form_LinkProps> = ({children, ...props}) => {
  
 export interface Form_InputProps {
     placeholder: string;
-    value: string;
+    value?: string;
     onChange: ({ target: any }: { target: any; }) => void;
     type?: string;
     autoComplete?: string;
