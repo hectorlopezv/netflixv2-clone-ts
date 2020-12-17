@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen, getByTestId, getByAltText } from '@testing-library/react';
 import {BrowserRouter as Router} from 'react-router-dom';
-import SignIn from '../../pages/SignIn';
+import SignUp from '../../pages/SignUp';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 //mock asynchornous calls
@@ -18,9 +18,11 @@ jest.mock('react-router-dom', () => ({
 //mocking firebase object.......
 const firebase = {
     auth: jest.fn(() => ({
-        signInWithEmailAndPassword: jest.fn((emailAddress, password) => Promise.resolve({hello:'I am signed in!'}))
-    }))
-}
+      createUserWithEmailAndPassword: jest.fn(() =>
+        Promise.resolve({ user: { updateProfile: jest.fn(() => Promise.resolve('I am signed up!')) } })
+      ),
+    })),
+  };
 
 const initialState = {
     firebase: firebase
@@ -52,20 +54,28 @@ function createTestStore() {
 
 const store = createTestStore();
 
-describe('<SignIn />', () => {
-    it('renders the sign in page with a form submission', async () => {
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useHistory: () => ({}),
+  }));
+  
+
+  
+  describe('<SignUp />', () => {
+    it('renders the sign up page with a form submission', async () => {
       const { getByTestId, getByPlaceholderText, queryByTestId } = render(
         <Router>
-          <Provider store={store}>
-            <SignIn />
+            <Provider value={{ firebase }}>
+            <SignUp />
           </Provider>
         </Router>
       );
   
       await act(async () => {
+        await fireEvent.change(getByPlaceholderText('First name'), { target: { value: 'Karl' } });
         await fireEvent.change(getByPlaceholderText('Email address'), { target: { value: 'karl@gmail.com' } });
         await fireEvent.change(getByPlaceholderText('Password'), { target: { value: 'password' } });
-        fireEvent.click(getByTestId('sign-in'));
+        fireEvent.click(getByTestId('sign-up'));
   
         expect(getByPlaceholderText('Email address').value).toBe('karl@gmail.com');
         expect(getByPlaceholderText('Password').value).toBe('password');

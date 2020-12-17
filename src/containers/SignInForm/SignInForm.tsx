@@ -61,7 +61,7 @@ const SignInForm: React.FC<SignInFormProps> = () => {
                     autoComplete="off"
                     onChange={(event: any) => setpassword(event.target.value)} />
 
-                <Form_Submit disabled={isInValid} type={"submit"}>
+                <Form_Submit data-testid="sign-in" disabled={isInValid} type={"submit"}>
                     Sign In
                 </Form_Submit>
             </Form_Base>
