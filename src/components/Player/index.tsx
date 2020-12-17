@@ -27,7 +27,7 @@ export interface Player_VideoProps {
 export const Player_Video: React.FC<Player_VideoProps> = ({src, ...props}) => {
     const { showPlayer, setshowPlayer } = useContext(PlayerContext);
     return showPlayer ? ReactDom.createPortal(
-    <Overlay onClick={() => setshowPlayer(false)}>
+    <Overlay data-testid="player" onClick={() => setshowPlayer(false)  }>
         <Inner>
             <video id="netflix-player" controls>
                 <source src={src} type="video/mp4" />

@@ -16,44 +16,46 @@ const App = () => {
 
   const [user] = useAuthListener();
 
+
   return (  
 
     <Router>
+
+
       <Switch>
 
-        <IsUserRedirect 
+
+
+      <IsUserRedirect 
           user={user} 
           loggedInPath={ROUTES.BROWSE}  
           path={ROUTES.SIGN_IN}
-        
+          exact={true}
         >
             <SignIn />
         </IsUserRedirect>
-
-
+      
         <IsUserRedirect 
           user={user} 
           loggedInPath={ROUTES.BROWSE}  
           path={ROUTES.SIGN_UP}
-      
+          exact={true}
         >
             <SignUp />
         </IsUserRedirect>
 
-
-        <ProtectedRoute user={user} path={ROUTES.BROWSE} exact>
+        <ProtectedRoute user={user} path={ROUTES.BROWSE} exact={true}>
             <Browse />
         </ProtectedRoute>
-
-
-        <IsUserRedirect 
+      <IsUserRedirect 
           user={user} 
           loggedInPath={ROUTES.BROWSE}  
           path={ROUTES.HOME}
-          exact
+          exact={true}
         >
             <HomePage />
         </IsUserRedirect>
+
 
       </Switch>
 

@@ -11,12 +11,15 @@ const IsUserRedirect= ({user, loggedInPath, children, ...props}) => {
     return ( 
         <Route {...props}
           render={() => {
+            console.log('dentro del user redirect', user, user.length)
             //what to render if user is in store.. localstorage
-            if(!user){
+            if(user.length === 2 || user.length === 0){
+              console.log('bebe')
               return children//render page or component ... user props
             }
 
             if(user){
+              console.log('im here')
               return (<Redirect 
                 to={{
                   pathname: loggedInPath
@@ -38,11 +41,9 @@ export const ProtectedRoute = ({user, children, ...props}) =>{
     <Route 
       {...props}
       render={({location}) => {//comes from history
-        if(user){//return children if user exists
-          return children;
-        }
+
         
-        if(!user){
+        if(user === ""){
           return (
           <Redirect
               to={{
@@ -50,6 +51,10 @@ export const ProtectedRoute = ({user, children, ...props}) =>{
                 state: { from: location },//from ... to
               }}
             />);
+        }
+
+        if(user){//return children if user exists
+          return children;
         }
         return null;
       }}
