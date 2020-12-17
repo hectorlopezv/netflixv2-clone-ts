@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Accordion opens and closes the accordion <Accordion /> Component 1`] = `
+<div
+  class="Accordion__Container-sc-1llfk3v-0 ipGnGp"
+>
+  <div
+    class="Accordion__Inner-sc-1llfk3v-1 eLDdmq"
+  >
+    <h1
+      class="Accordion__Title-sc-1llfk3v-6 fiTCHn"
+    >
+      Frequently Asked Questions
+    </h1>
+    <div
+      class="Accordion__Item-sc-1llfk3v-2 iDbBps"
+    >
+      <div
+        class="Accordion__Header-sc-1llfk3v-3 dLdwhC"
+      >
+        What is Netflix?
+        <img
+          alt="Close"
+          src="images/icons/add.png"
+        />
+      </div>
+    </div>
+    <div
+      class="Accordion__Item-sc-1llfk3v-2 iDbBps"
+    >
+      <div
+        class="Accordion__Header-sc-1llfk3v-3 dLdwhC"
+      >
+        How much does Netflix cost?
+        <img
+          alt="Close"
+          src="images/icons/add.png"
+        />
+      </div>
+    </div>
+    <div
+      class="Accordion__Item-sc-1llfk3v-2 iDbBps"
+    >
+      <div
+        class="Accordion__Header-sc-1llfk3v-3 dLdwhC"
+      >
+        Where can I watch?
+        <img
+          alt="Close"
+          src="images/icons/add.png"
+        />
+      </div>
+    </div>
+    <div
+      class="Accordion__Item-sc-1llfk3v-2 iDbBps"
+    >
+      <div
+        class="Accordion__Header-sc-1llfk3v-3 dLdwhC"
+      >
+        How do I cancel?
+        <img
+          alt="Close"
+          src="images/icons/add.png"
+        />
+      </div>
+    </div>
+    <div
+      class="Accordion__Item-sc-1llfk3v-2 iDbBps"
+    >
+      <div
+        class="Accordion__Header-sc-1llfk3v-3 dLdwhC"
+      >
+        What can I watch on Netflix?
+        <img
+          alt="Close"
+          src="images/icons/add.png"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
