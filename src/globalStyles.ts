@@ -21,7 +21,6 @@ const GlobalStyles =  createGlobalStyle<any>`
         font-size: 62.5%;
         background-color: black;
         color: #333333;
-        font-size: 16px;
     }
 `;
 

@@ -31,7 +31,7 @@ export const Picture = styled.img<propsPicture>`
 export const Name = styled.p`
     color: #808080;
     text-overflow: ellipsis;
-    flont-size: 16px;
+    font-size: 16px;
     text-align: center;
     &:hover {
         font-weight: bold;
@@ -50,14 +50,14 @@ export const Item = styled.li`
     max-height: 200px;
     max-width: 200px;
     list-style-type: none;
-    text-aling: center;
+    text-align: center;
     margin-right: 30px;
 
     &:hover > ${Picture}{
         border: 3px solid white;
     }
 
-    &: hover ${Name} {
+    &:hover ${Name} {
         font-weight: bold;
         color: white;
     }

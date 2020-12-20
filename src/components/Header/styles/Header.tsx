@@ -62,7 +62,7 @@ export const Header_ButtonLink = styled<any>(ReactRouterLink)`
     height: fit-content;
     color: white;
     border: 0;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 3px;
     padding: 8px 17px;
     cursor: pointer;
@@ -115,10 +115,11 @@ export const Link = styled.p<LinkProps>`
     color: white;
     text-decoration: none;
     margin-right: 30px;
+    font-size: 13.5px;
     cursor: pointer;
-    font-weight: ${({active}) => (active === 'true' ? '700' : 'normal')}
-    &:hover {
-        font-weight: bold;
+
+    &:first-of-type {
+        margin-left: 0;
     }
 
     &:last-of-type {
