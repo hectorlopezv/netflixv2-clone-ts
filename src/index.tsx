@@ -6,7 +6,6 @@ import { applyMiddleware, combineReducers } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import 'normalize.css';
 import GlobalStyles from './globalStyles';
 //import {firebase} from './lib/firebase.prod';
 //import {seedDatabase} from './lib/seed';

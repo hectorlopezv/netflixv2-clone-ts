@@ -62,7 +62,7 @@ export const Header_ButtonLink = styled<any>(ReactRouterLink)`
     height: fit-content;
     color: white;
     border: 0;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 3px;
     padding: 8px 17px;
     cursor: pointer;
@@ -183,7 +183,7 @@ export const Dropdown = styled.div`
 export const Profile = styled.div`
     display: flex;
     align-items: center;
-    marign-left: 20px;
+    margin-left: 20px;
     position: relative;
 
     button {
@@ -199,11 +199,11 @@ export const Profile = styled.div`
 
 export const Search = styled.div`
     display: flex;
-    align-item: center;
+    align-items: center;
 
     svg {
         color: white;
-        cursosr: pointer;
+        cursor: pointer;
     }
 
     @media (max-width: 700px){
